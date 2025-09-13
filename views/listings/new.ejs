@@ -1,0 +1,56 @@
+<% layout("layout/boilerPlate")%>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h3>Create a New Listing</h3>
+            <br>
+
+            <form method="post" action="/listings">
+
+
+                <div class="mb-3">
+                    <label for="title" class="form-title">Title</label>
+                    <input name="title" placeholder="Enter a catchy title" type="text" class="form-control">
+                </div>
+
+                <br><br>
+                <div class="mb-3">
+                    <label for="description" class="form-description">Description</label>
+                    <textarea name="description" class="form-control"></textarea>
+                </div>
+                <br><br>
+                <div class="mb-3">
+                    <label for="image" class="form-image">Image Link</label>
+                    <input name="image" placeholder="Enter image URL/Link" class="form-control">
+                </div>
+
+                <br><br>
+                <div class="row">
+
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-price">Price</label>
+                        <input name="price" placeholder="Enter price" type="number" class="form-control">
+                    </div>
+
+                    <br><br>
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-country">Country</label>
+                        <input name="country" placeholder="Enter country" type="text" class="form-control">
+                    </div>
+
+                </div>
+
+
+                <br><br>
+                <div class="mb-3">
+                    <label for="location" class="form-location">Location</label>
+                    <input name="location" placeholder="Enter location" type="text" class="form-control">
+                </div>
+
+                <br><br>
+                <button class="btn btn-dark red-btn">Add</button>
+                <br><br><br>
+
+            </form>
+
+        </div>
+    </div>

@@ -1,0 +1,51 @@
+<% layout("layout/boilerPlate")%>
+  <div class="row">
+    <div class="col-8 offset-2 mt-3">
+      <h1><b>Listing Details </b></h1>
+      <div class="card " style="width: 40rem ; ">
+        <img class="card-img-top show-img offset-1" src="<%= listing.image %>" alt="Card image cap">
+        <div class="offset-1">
+          <p>
+            <%= listing.title %>
+          </p>
+        </div>
+
+
+        <ul>
+          <li>
+            <%= listing.title %>
+          </li>
+          <li class="card-description">
+            <%= listing.description %>
+          </li>
+          <li class="card-price">&#8377; <%= listing.price.toLocaleString("en-IN") %>
+          </li>
+          <li class="card-location">
+            <%= listing.location %>
+          </li>
+          <li class="card-country">
+            <%= listing.country %>
+          </li>
+        </ul>
+
+      </div>
+      <br>
+
+      <br>
+      <div class="row">
+        <div class=" show-btns  ">
+
+          <a href="/listings/<%=listing.id%>/edit" class="btn btn-dark red-btn btn-edit col-1 ">Edit</a>
+
+
+          <form method="POST" action="/listings/<%=listing.id%>?_method=DELETE">
+            <button class="btn btn-dark  offset-4">Delete</button>
+          </form>
+
+        </div>
+
+      </div>
+      <br><br><br>
+
+    </div>
+  </div>
