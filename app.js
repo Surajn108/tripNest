@@ -5,6 +5,7 @@ const Listing = require("./models/listing.js")
 const path = require("path");
 const methodOverride = require("method-override")
 const ejsMate = require("ejs-mate")
+const port = 3000;
 
 
 
@@ -28,12 +29,15 @@ async function main() {
     mongoose.connect("mongodb://127.0.0.1:27017/tripNest")
 }
 
-app.listen(3000, (req, res) => {
-    console.log("App is listening on port 3000");
+app.listen(port, (req, res) => {
+    console.log(`App is listening on port ${port}`);
 })
 
-app.get("/", (req, res) => {
-    res.send("Hi this is root file")
+//Home rote
+app.get("/", async(req, res) => {
+    let listings = await Listing.find({});
+    res.render("listings/home.ejs" , {listings})
+   
 });
 
 //Index route
