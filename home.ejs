@@ -1,0 +1,28 @@
+<% layout("layout/boilerPlate")%>
+<header class="text-center p-5 bg-light">
+    <h1>Welcome to TripNest 🏡</h1>
+    <p>Find your perfect stay from around the world</p>
+    <form action="/listings" method="get" class="d-flex justify-content-center">
+      <input type="text" name="location" placeholder="Search by location" class="form-control w-25">
+      <button class="btn btn-dark ms-2">Search</button>
+    </form>
+  </header>
+  
+  <section class="container mt-5">
+    <h2>Featured Listings</h2>
+    <div class="row ">
+      <!-- Loop over a few listings here -->
+      <% listings.slice(0,3).forEach(listing => { %>
+        <div class="col-md-4">
+          <div class="card  " >
+            <img src="<%= listing.image%>" class="card-img-top">
+            <div class="card-body">
+              <h5><%= listing.title %></h5>
+              <p>&#8377;<%= listing.price %> · <%= listing.location %></p>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+    <a href="/listings" class="btn btn-primary mt-3">View All</a>
+  </section>
